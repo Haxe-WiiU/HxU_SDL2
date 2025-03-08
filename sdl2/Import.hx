@@ -6,3 +6,6 @@ import sdl2.SDL_Stdinc.SDL_bool;
 import sdl2.SDL_Render.SDL_Renderer;
 import sdl2.SDL_Render.SDL_Texture;
 import sdl2.SDL_Video.SDL_Window;
+
+import cxx.*;
+import cxx.num.*;
