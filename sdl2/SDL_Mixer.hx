@@ -87,6 +87,10 @@ extern class SDL_Mixer {
 	@:include("SDL2/SDL_mixer.h")
 	extern public static var MIX_DEFAULT_FORMAT:Untyped;
 
+	@:native("MIX_MAX_VOLUME")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static var MIX_MAX_VOLUME:Int;
+
 	@:native("Mix_Init")
 	@:include("SDL2/SDL_mixer.h")
 	extern public static function Mix_Init(flags:MIX_InitFlags):Int;
@@ -119,6 +123,10 @@ extern class SDL_Mixer {
 	@:include("SDL2/SDL_mixer.h")
 	extern public static function Mix_LoadMUS(file:ConstCharPtr):Ptr<Mix_Music>;
 
+	@:native("Mix_LoadWAV")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_LoadWAV(file:ConstCharPtr):Ptr<Mix_Chunk>;
+
 	@:native("Mix_FreeChunk")
 	@:include("SDL2/SDL_mixer.h")
 	extern public static function Mix_FreeChunk(chunk:Mix_Chunk):Void;
@@ -134,4 +142,52 @@ extern class SDL_Mixer {
 	@:native("Mix_GetError")
 	@:include("SDL2/SDL_mixer.h")
 	extern public static function Mix_GetError():ConstCharPtr;
+
+	@:native("Mix_Volume")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_Volume(channel:Int, volume:Int):Void;
+
+	@:native("Mix_VolumeChunk")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_VolumeChunk(chunk:Ptr<Mix_Chunk>, volume:Int):Void;
+
+	@:native("Mix_VolumeMusic")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_VolumeMusic(volume:Int):Void;
+
+	@:native("Mix_HaltChannel")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_HaltChannel(channel:Int):Void;
+
+	@:native("Mix_HaltMusic")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_HaltMusic():Void;
+
+	@:native("Mix_PlayChannel")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_PlayChannel(channel:Int, chunk:Ptr<Mix_Chunk>, loops:Int):Int;
+
+	@:native("Mix_PlayingMusic")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_PlayingMusic():Int;
+
+	@:native("Mix_PausedMusic")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_PausedMusic():Int;
+
+	@:native("Mix_PauseMusic")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_PauseMusic():Void;
+
+	@:native("Mix_ResumeMusic")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_ResumeMusic():Void;
+
+	@:native("Mix_RewindMusic")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_RewindMusic():Void;
+
+	@:native("Mix_HookMusicFinished")
+	@:include("SDL2/SDL_mixer.h")
+	extern public static function Mix_HookMusicFinished(onFinishedFunc:Void->VoidPtr):Void;
 }

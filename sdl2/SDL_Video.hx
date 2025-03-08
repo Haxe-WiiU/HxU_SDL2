@@ -149,6 +149,10 @@ extern class SDL_Video {
     @:include("SDL2/SDL_video.h")
     extern public static var SDL_WINDOWPOS_CENTERED:Int;
 
+	@:native("SDL_WINDOWPOS_UNDEFINED")
+    @:include("SDL2/SDL_video.h")
+    extern public static var SDL_WINDOWPOS_UNDEFINED:Int;
+
 	@:native("SDL_CreateWindow")
     @:include("SDL2/SDL_video.h")
 	extern public static function SDL_CreateWindow(title:ConstCharPtr, x:Int, y:Int, w:Int, h:Int, flags:SDL_WindowFlags):Ptr<SDL_Window>;
@@ -156,4 +160,8 @@ extern class SDL_Video {
     @:native("SDL_DestroyWindow")
     @:include("SDL2/SDL_video.h")
     extern public static function SDL_DestroyWindow(window:Ptr<SDL_Window>):Void;
+
+	@:native("SDL_VideoQuit")
+    @:include("SDL2/SDL_video.h")
+	extern public static function SDL_VideoQuit():Void;
 }

@@ -113,7 +113,7 @@ extern class SDL_Render {
     
 	@:native("SDL_GetRendererOutputSize")
     @:include("SDL2/SDL_render.h")
-    extern public static function SDL_GetRendererOutputSize(renderer:Ptr<SDL_Renderer>, w:Int, h:Int):Int;
+    extern public static function SDL_GetRendererOutputSize(renderer:Ptr<SDL_Renderer>, w:Ptr<Int>, h:Ptr<Int>):Int;
 
 	@:native("SDL_CreateTexture")
     @:include("SDL2/SDL_render.h")
@@ -203,6 +203,11 @@ extern class SDL_Render {
 	@:native("SDL_RenderCopy")
     @:include("SDL2/SDL_render.h")
     extern public static function SDL_RenderCopy(renderer:Ptr<SDL_Renderer>, texture:Ptr<SDL_Texture>, srcRect:Const<Ptr<SDL_Rect>>, dstRect:Ptr<SDL_Rect>):Int;
+
+    @:native("SDL_RenderCopyEx")
+    @:include("SDL2/SDL_render.h")
+	extern public static function SDL_RenderCopyEx(renderer:Ptr<SDL_Renderer>, texture:Ptr<SDL_Texture>, srcRect:Const<Ptr<SDL_Rect>>, dstRect:Ptr<SDL_Rect>,
+		angle:Float, center:Ptr<SDL_Rect.SDL_Point>, flip:SDL_RendererFlip):Int;
 
 	@:native("SDL_RenderPresent")
     @:include("SDL2/SDL_render.h")
