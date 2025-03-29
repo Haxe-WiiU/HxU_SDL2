@@ -3,10 +3,10 @@
     "url": "https://github.com/Slushi-Github/hxSDL2",
     "license": "Apache",
     "tags": [
-        "native"
+        "native", "wiiu"
     ],
     "description": "Haxe @:native bindings for SDL2 to do homebrew on Wii U",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "releasenote": "",
     "contributors": [
         "Slushi"
