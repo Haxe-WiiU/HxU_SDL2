@@ -2,21 +2,26 @@ package sdl2;
 
 @:cppInclude("SDL2/SDL_rect.h") @:include("SDL2/SDL_rect.h")
 
-@:structAccess
-@:cppInclude("SDL2/SDL_rect.h")
 @:include("SDL2/SDL_rect.h")
 @:native("SDL_Point")
-extern typedef SDL_Point = {
-    var x:Int;
-    var y:Int;
+@:valueType
+extern class SDL_Point {
+    public var x:Int;
+    public var y:Int;
+
+    @:haxe.warning("-WExternWithExpr")
+    public function new() {}
 }
 
-@:cppInclude("SDL2/SDL_rect.h")
 @:include("SDL2/SDL_rect.h")
 @:native("SDL_Rect")
-extern typedef SDL_Rect = {
-    var x:Int;
-    var y:Int;
-    var w:Int;
-    var h:Int;
+@:valueType
+extern class SDL_Rect {
+    public var x:Int;
+    public var y:Int;
+    public var w:Int;
+    public var h:Int;
+    
+    @:haxe.warning("-WExternWithExpr")
+    public function new() {}
 }

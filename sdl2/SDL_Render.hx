@@ -147,6 +147,10 @@ extern class SDL_Render {
     @:include("SDL2/SDL_render.h")
     extern public static function SDL_SetTextureBlendMode(texture:Ptr<SDL_Texture>, blendMode:SDL_BlendMode):Int;
 
+    @:native("SDL_SetRenderDrawBlendMode")
+    @:include("SDL2/SDL_render.h")
+    extern public static function SDL_SetRenderDrawBlendMode(renderer:Ptr<SDL_Renderer>, blendMode:SDL_BlendMode):Int;
+
     @:native("SDL_GetTextureBlendMode")
     @:include("SDL2/SDL_render.h")
     extern public static function SDL_GetTextureBlendMode(texture:Ptr<SDL_Texture>, blendMode:Ptr<SDL_BlendMode>):Int;

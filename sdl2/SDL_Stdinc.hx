@@ -12,6 +12,14 @@ extern class SDL_Stdinc {
 	@:native("SDL_memcpy")
 	@:include("SDL2/SDL_stdinc.h")
 	extern public static function SDL_memcpy(dst:VoidPtr, src:VoidPtr, len:SizeT):VoidPtr;
+
+	@:native("SDL_malloc")
+	@:include("SDL2/SDL_stdinc.h")
+	extern public static function SDL_malloc(size:SizeT):VoidPtr;
+
+	@:native("SDL_zero")
+	@:include("SDL2/SDL_stdinc.h")
+	extern public static function SDL_zero(dst:VoidPtr):VoidPtr;
 }
 
 @:cppInclude("SDL2/SDL_stdinc.h")
