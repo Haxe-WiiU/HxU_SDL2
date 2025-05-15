@@ -86,6 +86,11 @@ extern class SDL_PixelFormat {
 
 @:include("SDL2/SDL_Pixels.h")
 extern class SDL_PixelsClass {
+
+    @:native("SDL_PIXELFORMAT_RGBA8888")
+    @:include("SDL2/SDL_Pixels.h")
+    extern public static var SDL_PIXELFORMAT_RGBA8888:UInt32;
+
     @:native("SDL_MapRGBA")
     @:include("SDL2/SDL_Pixels.h")
     extern public static function SDL_MapRGBA(format:Const<Ptr<SDL_PixelFormat>>, r:UInt8, g:UInt8, b:UInt8, a:UInt8):UInt32;

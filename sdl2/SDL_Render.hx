@@ -117,7 +117,7 @@ extern class SDL_Render {
 
 	@:native("SDL_CreateTexture")
     @:include("SDL2/SDL_render.h")
-    extern public static function SDL_CreateTexture(renderer:Ptr<SDL_Renderer>, format:UInt32, access:Int, w:Int, h:Int):Ptr<SDL_Texture>;
+    extern public static function SDL_CreateTexture(renderer:Ptr<SDL_Renderer>, format:UInt32, access:SDL_TextureAccess, w:Int, h:Int):Ptr<SDL_Texture>;
 
 	@:native("SDL_CreateTextureFromSurface")
     @:include("SDL2/SDL_render.h")
@@ -224,4 +224,8 @@ extern class SDL_Render {
 	@:native("SDL_SetRenderDrawColor")
     @:include("SDL2/SDL_render.h")
     extern public static function SDL_SetRenderDrawColor(renderer:Ptr<SDL_Renderer>, r:UInt8, g:UInt8, b:UInt8, a:UInt8):Int;
+
+    @:native("SDL_RenderFillRect")
+    @:include("SDL2/SDL_render.h")
+    extern public static function SDL_RenderFillRect(renderer:Ptr<SDL_Renderer>, rect:Const<Ptr<SDL_Rect>>):Int;
 }
