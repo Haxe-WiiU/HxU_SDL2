@@ -73,12 +73,31 @@ extern enum SDL_RendererFlip {
 @:cppInclude("SDL2/SDL_render.h")
 @:include("SDL2/SDL_render.h")
 @:native("SDL_Texture")
-extern class SDL_Texture {}
+extern class SDL_Texture {
+    @:haxe.warning("-WExternWithExpr")
+    public function new() {}
+}
 
 @:cppInclude("SDL2/SDL_render.h")
 @:include("SDL2/SDL_render.h")
 @:native("SDL_Renderer")
-extern class SDL_Renderer {}
+extern class SDL_Renderer {
+    @:haxe.warning("-WExternWithExpr")
+    public function new() {}
+}
+
+@:cppInclude("SDL2/SDL_render.h")
+@:include("SDL2/SDL_render.h")
+@:native("SDL_Vertex")
+@:valueType
+extern class SDL_Vertex {
+    public var position:SDL_Rect.SDL_FPoint;
+    public var color:SDL_Color;
+    public var tex_coord:SDL_Rect.SDL_FPoint;
+
+    @:haxe.warning("-WExternWithExpr")
+    public function new() {}
+}
 
 @:cppInclude("SDL2/SDL_render.h")
 @:include("SDL2/SDL_render.h")
@@ -213,6 +232,11 @@ extern class SDL_Render {
 	extern public static function SDL_RenderCopyEx(renderer:Ptr<SDL_Renderer>, texture:Ptr<SDL_Texture>, srcRect:Const<Ptr<SDL_Rect>>, dstRect:Ptr<SDL_Rect>,
 		angle:Float, center:Ptr<SDL_Rect.SDL_Point>, flip:SDL_RendererFlip):Int;
 
+    @:native("SDL_RenderCopyExF")
+    @:include("SDL2/SDL_render.h")
+	extern public static function SDL_RenderCopyExF(renderer:Ptr<SDL_Renderer>, texture:Ptr<SDL_Texture>, srcRect:Const<Ptr<SDL_Rect>>, dstRect:Ptr<SDL_Rect.SDL_FRect>,
+		angle:Float, center:Ptr<SDL_Rect.SDL_FPoint>, flip:SDL_RendererFlip):Int;
+
 	@:native("SDL_RenderPresent")
     @:include("SDL2/SDL_render.h")
     extern public static function SDL_RenderPresent(renderer:Ptr<SDL_Renderer>):Int;
@@ -228,4 +252,8 @@ extern class SDL_Render {
     @:native("SDL_RenderFillRect")
     @:include("SDL2/SDL_render.h")
     extern public static function SDL_RenderFillRect(renderer:Ptr<SDL_Renderer>, rect:Const<Ptr<SDL_Rect>>):Int;
+
+    @:native("SDL_RenderGeometry")
+    @:include("SDL2/SDL_render.h")
+    extern public static function SDL_RenderGeometry(renderer:Ptr<SDL_Renderer>, texture:Ptr<SDL_Texture>, vertices:Ptr<SDL_Vertex>, num_vertices:Int, indices:Int, num_indices:Int):Int;
 }

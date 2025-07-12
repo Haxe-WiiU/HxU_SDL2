@@ -20,7 +20,6 @@ extern typedef SDL_RWops = {
 @:cppInclude("SDL2/SDL_rwops.h") 
 @:include("SDL2/SDL_rwops.h")
 extern class SDL_RWopsClass {
-
 	@:native("RW_SEEK_END")
 	@:include("SDL2/SDL_rwops.h")
 	extern public static
