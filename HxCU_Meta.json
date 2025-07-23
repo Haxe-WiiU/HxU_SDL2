@@ -1,0 +1,22 @@
+{
+    "libVersion": "1.6.0",
+    "haxeLibs": [],
+    "wiiuLibs": [
+        "SDL2_mixer",
+        "SDL2_image",
+        "SDL2_ttf",
+        "SDL2_gfx",
+        "SDL2",
+        "vorbisfile",
+        "vorbis",
+        "ogg",
+        "mpg123",
+        "modplug",
+        "png",
+        "jpeg",
+        "z",
+        "freetype",
+        "bz2"
+    ],
+    "mainDefines": []
+}

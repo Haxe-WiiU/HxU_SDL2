@@ -101,6 +101,18 @@ extern class SDL_Vertex {
 
 @:cppInclude("SDL2/SDL_render.h")
 @:include("SDL2/SDL_render.h")
+@:native("SDL_ScaleMode")
+extern enum SDL_ScaleMode {
+    @:native("SDL_ScaleModeNearest")
+    SDL_ScaleModeNearest;
+    @:native("SDL_ScaleModeLinear")
+    SDL_ScaleModeLinear;
+    @:native("SDL_ScaleModeBest")
+    SDL_ScaleModeBest;
+}
+
+@:cppInclude("SDL2/SDL_render.h")
+@:include("SDL2/SDL_render.h")
 extern class SDL_Render {
 	@:native("SDL_GetNumRenderDrivers")
     @:include("SDL2/SDL_render.h")
@@ -256,4 +268,12 @@ extern class SDL_Render {
     @:native("SDL_RenderGeometry")
     @:include("SDL2/SDL_render.h")
     extern public static function SDL_RenderGeometry(renderer:Ptr<SDL_Renderer>, texture:Ptr<SDL_Texture>, vertices:Ptr<SDL_Vertex>, num_vertices:Int, indices:Int, num_indices:Int):Int;
+
+    @:native("SDL_SetTextureScaleMode")
+    @:include("SDL2/SDL_render.h")
+    extern public static function SDL_SetTextureScaleMode(texture:Ptr<SDL_Texture>, scaleMode:SDL_ScaleMode):Int;
+
+    @:native("SDL_GetTextureScaleMode")
+    @:include("SDL2/SDL_render.h")
+    extern public static function SDL_GetTextureScaleMode(texture:Ptr<SDL_Texture>, blendMode:Ptr<SDL_ScaleMode>):Int;
 }
