@@ -6,7 +6,7 @@
         "native", "wiiu"
     ],
     "description": "Haxe @:native bindings for SDL2 to do homebrew on Wii U",
-    "version": "1.2.0",
+    "version": "1.6.0",
     "releasenote": "",
     "contributors": [
         "Slushi"
