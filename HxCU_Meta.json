@@ -11,6 +11,7 @@
         "vorbis",
         "ogg",
         "mpg123",
+        "harfbuzz",
         "modplug",
         "png",
         "jpeg",
@@ -18,5 +19,14 @@
         "freetype",
         "bz2"
     ],
-    "mainDefines": []
+    "mainDefines": [],
+    "cDefines": [
+        "-I\"$(PORTLIBS)/include/freetype2\"",
+        "-Wno-unknown-pragmas",
+        "-Wno-unused"
+    ],
+    "cppDefines": [
+        "-Wno-unknown-pragmas",
+        "-Wno-unused"
+    ]
 }
